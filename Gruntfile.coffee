@@ -14,6 +14,11 @@ module.exports = (grunt) ->
                 jshintrc: '.jshintrc'
             src: allPath
 
+        'regex-check':
+            files: testPath
+            options:
+                pattern: /(describe|it)\.only/g
+
         mochaTest:
             test:
                 options:
@@ -40,11 +45,12 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-contrib-jshint'
     grunt.loadNpmTasks 'grunt-contrib-clean'
     grunt.loadNpmTasks 'grunt-mocha-test'
+    grunt.loadNpmTasks 'grunt-regex-check'
     grunt.loadNpmTasks 'grunt-nodemon'
     grunt.loadNpmTasks 'grunt-apidoc'
 
     # Default task(s).
-    grunt.registerTask 'default', ['clean', 'jshint', 'mochaTest', 'apidoc']
-    grunt.registerTask 'test', ['jshint', 'mochaTest']
+    grunt.registerTask 'default', ['clean', 'regex-check', 'jshint', 'mochaTest', 'apidoc']
+    grunt.registerTask 'test', ['regex-check', 'jshint', 'mochaTest']
 
     grunt.registerTask 'start', ['nodemon']
