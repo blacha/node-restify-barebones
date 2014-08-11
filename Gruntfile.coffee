@@ -14,13 +14,12 @@ module.exports = (grunt) ->
                 jshintrc: '.jshintrc'
             src: allPath
 
-        jasmine_node:
-            projectRoot: '.'
-            jUnit:
-                report: true
-                savePath: './build/test-reports/'
-                useDotNotation: true
-                consolidate: true
+        mochaTest:
+            test:
+                options:
+                    reporter: 'spec'
+                    timeout: 1000
+                src: testPath
 
         apidoc:
             myapp:
@@ -40,12 +39,12 @@ module.exports = (grunt) ->
 
     grunt.loadNpmTasks 'grunt-contrib-jshint'
     grunt.loadNpmTasks 'grunt-contrib-clean'
-    grunt.loadNpmTasks 'grunt-jasmine-node'
+    grunt.loadNpmTasks 'grunt-mocha-test'
     grunt.loadNpmTasks 'grunt-nodemon'
     grunt.loadNpmTasks 'grunt-apidoc'
 
     # Default task(s).
-    grunt.registerTask 'default', ['clean', 'jshint', 'jasmine_node', 'apidoc']
-    grunt.registerTask 'test', ['jshint', 'jasmine_node']
+    grunt.registerTask 'default', ['clean', 'jshint', 'mochaTest', 'apidoc']
+    grunt.registerTask 'test', ['jshint', 'mochaTest']
 
     grunt.registerTask 'start', ['nodemon']

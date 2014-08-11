@@ -17,7 +17,8 @@
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.6.3",
-    "grunt-jasmine-node": "~0.1.0",
+    "chai": "~1.9.1",
+    "grunt-mocha-test": "~0.10.2",
     "grunt-apidoc": "~0.3.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-nodemon": "~0.2.0",

@@ -1,24 +1,22 @@
 {
     "globals": {
-        "jasmine": false,
-        "spyOn": false,
         "it": false,
-        "console": false,
         "describe": false,
-        "expect": false,
         "beforeEach": false,
-        "waits": false,
-        "waitsFor": false,
-        "runs": false
+        "afterEach": false,
+        "before": false,
+        "after": false,
+        "emit": false,
+        "require": false,
+        "module": false,
+        "exports": false,
+        "process": false,
+        "__dirname": false
     },
 
-    "node" : true,
     "es5" : false,
-    "esnext": true,
-    "camelcase": true,
-    "browser" : true,
-    "latedef": true,
     "devel": false,
+
     "boss" : false,
     "curly": true,
     "debug": false,

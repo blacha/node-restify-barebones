@@ -2,9 +2,9 @@
 
 Install node and NPM.
 
-``apt-get install node npm``
+``apt-get install nodejs npm``
 
-Install the dependencies 
+Install the dependencies
 
 ``npm install``
 
